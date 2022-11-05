@@ -1,0 +1,132 @@
+<div class="row"> 
+    <div class="col-md-12">
+        <h2>{{student.firstName}} {{student.lastName}} - Student: {{student.studentID}}</h2>
+        <hr /> 
+        <form method="post" action="/student/update">
+        <input type="hidden" name="studentID" value="{{student.studentID}}">
+            <fieldset> 
+                <legend>Personal Information</legend> 
+                <div class="row">
+                    <div class="col-md-6"> 
+                        <div class="form-group"> 
+                            <label for="firstName">First Name</label> 
+                            <input class="form-control" id="firstName" name="firstName" type="text" value="{{student.firstName}}" /> 
+                        </div> 
+                    </div> 
+                    <div class="col-md-6"> 
+                        <div class="form-group"> 
+                            <label for="lastName">Last Name</label> 
+                            <input class="form-control" id="lastName" name="lastName" type="text" value="{{student.lastName}}" /> 
+                        </div> 
+                    </div>
+                     <div class="col-md-6"> 
+                        <div class="form-group"> 
+                            <label for="email">Email</label> 
+                            <input class="form-control"
+                            id="email" name="email" type="email" value="{{student.email}}" /> 
+                        </div> 
+                    </div>
+                    <div class="col-md-6"> 
+                        <div class="form-group"> 
+                            <label for="phone">Phone</label> 
+                            <input class="form-control" 
+                            id="phone"
+                            name="phone" type="tel" value="{{student.phone}}" /> 
+                        </div> 
+                    </div>
+                    <div class="col-md-6"> 
+                        <div class="form-group"> 
+                            <label for="street">Address (Street)</label> 
+                            <input class="form-control" 
+                            id="street"
+                            name="addressStreet" type="text" value="{{student.addressStreet}}" /> 
+                        </div> 
+                    </div>
+                    <div class="col-md-6"> 
+                        <div class="form-group"> 
+                            <label for="city">Address (City)</label> 
+                            <input class="form-control" 
+                            id="city"
+                            name="addressCity" type="text" value="{{student.addressCity}}" /> 
+                        </div> 
+                    </div>
+                    <div class="col-md-6"> 
+                        <div class="form-group"> 
+                            <label for="state">Address (State)</label> 
+                            <input class="form-control" 
+                            id="state"
+                            name="addressState" type="text" value="{{student.addressState}}" /> 
+                        </div> 
+                    </div>
+                    <div class="col-md-6"> 
+                        <div class="form-group"> 
+                            <label for="zip">Address (Zip Code)</label> 
+                            <input class="form-control" 
+                            id="zip"
+                            name="addressPostal" type="text" value="{{student.addressPostal}}" /> 
+                        </div> 
+                    </div>
+                    <div class="col-md-6"> 
+                        <div class="form-group"> 
+                            <label for="status">Status</label> 
+                           <label  class="checkbox-inline">
+                                <input type="radio" id="status" name="status" value="Full Time" {{#equal student.status "Full Time"}}checked{{/equal}} /> Full Time
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="radio" id="status" name="status" value="Part Time" {{#equal student.status "Part Time"}}checked{{/equal}} /> Part Time
+                            </label> 
+                        </div> 
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="program">Program</label>
+                                <select class="form-control" name="program" id="program">
+                                    <option {{#equal student.program "ACF"}}selected{{/equal}}>Accounting and Finance</option>
+                                    <option {{#equal student.program "AVO"}}selected{{/equal}}>Aviation Operations</option>
+                                    <option {{#equal student.program "DAN"}}selected{{/equal}}>3D Animation</option>
+                                    <option {{#equal student.program "CPP"}}selected{{/equal}}>Computer Programming</option>
+                                    <option {{#equal student.program "CPA"}}selected{{/equal}}>Computer Programming and Analysis</option>
+                                    <option {{#equal student.program "CTY"}}selected{{/equal}}>Computer Systems Technology</option>
+                                    <option {{#equal student.program "CSN"}}selected{{/equal}}>Computer Systems Technician</option>
+                                    <option {{#equal student.program "BSD"}}selected{{/equal}}>
+                                    Software Development (Honours Bachelor of Technology)
+                                    </option>
+                                    <option {{#equal student.program "IFS"}}selected{{/equal}}>Informatics and Security(Honours Bachelor of Technology)</option>
+                                    <option {{#equal student.program "DAS"}}selected{{/equal}}>Data Science and Analytics program (Honours Bachelor of Technology)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="intStu">International Student?</label>
+                            <input 
+                            class="form-control" 
+                            id="intStu"
+                            type="checkbox" name="International Student" {{#if student.isInternationalStudent}}checked{{/if}} />
+                        </div>
+                    </div>
+                   <div class="col-md-6"> 
+                        <div class="form-group"> 
+                            <label for="cred">
+                                Expected Credential
+                            </label> 
+                            <input class="form-control" 
+                            id="cred"
+                            name="expectedCredential" type="text" value="{{student.expectedCredential}}" /> 
+                        </div> 
+                    </div> 
+                    <div class="col-md-6"> 
+                        <div class="form-group"> 
+                            <label for="regDate">Registration Date</label> 
+                            <input class="form-control" 
+                            id="regDate"
+                            name="registrationDate" type="text" value="{{student.registrationDate}}" /> 
+                        </div> 
+                    </div>
+                </div> 
+            </fieldset> 
+            <hr /> 
+            <input type="submit" class="btn btn-primary pull-right" value="Update Student" /><br /><br /><br /> 
+        </form> 
+    </div> 
+</div>
